@@ -47,15 +47,13 @@ public class Game implements Serializable {
 	private String imgUrl;
 	
 	@NotNull(message = "The SHORT DESCRIPTION field is required.")
-	@Column(name = "short_description")
+	@Column(name = "short_description", columnDefinition = "TEXT")
 	private String shortDescription;
 	
 	@NotNull(message = "The LONG DESCRIPTION field is required.")
-	@Column(name = "long_description")
+	@Column(name = "long_description", columnDefinition = "TEXT")
 	private String longDescription;
 
-	
-	
 	public Game() {
 	}
 
@@ -67,7 +65,6 @@ public class Game implements Serializable {
 			@NotNull(message = "The IMAGE URL field is required.") String imgUrl,
 			@NotNull(message = "The SHORT DESCRIPTION field is required.") String shortDescription,
 			@NotNull(message = "The LONG DESCRIPTION field is required.") String longDescription) {
-		super();
 		this.title = title;
 		this.year = year;
 		this.genre = genre;
