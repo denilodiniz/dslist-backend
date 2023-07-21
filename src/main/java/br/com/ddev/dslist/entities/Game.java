@@ -28,7 +28,7 @@ public class Game implements Serializable {
 	
 	@NotNull(message = "The YEAR field is required.")
 	@Column(name = "game_year")
-	private Integer year;
+	private Integer gameYear;
 	
 	@NotNull(message = "The GENRE field is required.")
 	@Column(name = "genre")
@@ -58,7 +58,7 @@ public class Game implements Serializable {
 	}
 
 	public Game(@NotNull(message = "The TITLE field is required.") String title,
-			@NotNull(message = "The YEAR field is required.") Integer year,
+			@NotNull(message = "The YEAR field is required.") Integer gameYear,
 			@NotNull(message = "The GENRE field is required.") String genre,
 			@NotNull(message = "The PLATFORMS field is required.") String platforms,
 			@NotNull(message = "The SCORE field is required.") Double score,
@@ -66,7 +66,7 @@ public class Game implements Serializable {
 			@NotNull(message = "The SHORT DESCRIPTION field is required.") String shortDescription,
 			@NotNull(message = "The LONG DESCRIPTION field is required.") String longDescription) {
 		this.title = title;
-		this.year = year;
+		this.gameYear = gameYear;
 		this.genre = genre;
 		this.platforms = platforms;
 		this.score = score;
@@ -87,12 +87,12 @@ public class Game implements Serializable {
 		this.title = title;
 	}
 
-	public Integer getYear() {
-		return year;
+	public Integer getGameYear() {
+		return gameYear;
 	}
 
-	public void setYear(Integer year) {
-		this.year = year;
+	public void setGameYear(Integer gameYear) {
+		this.gameYear = gameYear;
 	}
 
 	public String getGenre() {
