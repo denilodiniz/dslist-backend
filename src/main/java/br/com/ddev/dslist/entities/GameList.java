@@ -30,11 +30,11 @@ public class GameList implements Serializable {
         this.name = name;
     }
 
-    public Long id() {
+    public Long getId() {
         return id;
     }
 
-    public String name() {
+    public String getName() {
         return name;
     }
 
