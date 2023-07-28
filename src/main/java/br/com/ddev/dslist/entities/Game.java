@@ -1,5 +1,6 @@
 package br.com.ddev.dslist.entities;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -15,6 +16,7 @@ import jakarta.validation.constraints.NotNull;
 @Table(name = "tb_games")
 public class Game implements Serializable {
 
+	@Serial
 	private static final long serialVersionUID = 1L;
 	
 	@Id

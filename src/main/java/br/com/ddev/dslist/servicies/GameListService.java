@@ -2,7 +2,6 @@ package br.com.ddev.dslist.servicies;
 
 import br.com.ddev.dslist.dtos.GameListDTO.GameListDTO;
 import br.com.ddev.dslist.repositories.GameListRepository;
-import br.com.ddev.dslist.servicies.converterDtos.GameListConverterDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -19,13 +18,13 @@ public class GameListService {
     public List<GameListDTO> findAll (){
         return gameListRepository.findAll()
                 .stream()
-                .map(x -> GameListConverterDTO.gameListToDTO(x))
+                .map(x -> new GameListDTO(x))
                 .toList();
     }
 
     @Transactional(readOnly = true)
     public GameListDTO findById(Long id) {
-        return GameListConverterDTO.gameListToDTO(gameListRepository.findById(id).get());
+        return new GameListDTO(gameListRepository.findById(id).get());
     }
 
 }

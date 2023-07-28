@@ -1,9 +1,14 @@
 package br.com.ddev.dslist.dtos.GameDTO;
 
+import br.com.ddev.dslist.entities.Game;
+import org.springframework.beans.BeanUtils;
+
+import java.io.Serial;
 import java.io.Serializable;
 
 public class GameDTO implements Serializable {
 
+    @Serial
     private static final long serialVersionUID = 1L;
 
     private String title;
@@ -13,6 +18,10 @@ public class GameDTO implements Serializable {
     private Double score;
     private String imgUrl;
     private String longDescription;
+
+    public GameDTO(Game entity) {
+        BeanUtils.copyProperties(entity, this);
+    }
 
     public String getTitle() {
         return title;

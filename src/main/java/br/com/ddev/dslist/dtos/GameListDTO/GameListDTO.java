@@ -1,8 +1,10 @@
 package br.com.ddev.dslist.dtos.GameListDTO;
 
+import br.com.ddev.dslist.entities.GameList;
+import org.springframework.beans.BeanUtils;
+
 import java.io.Serial;
 import java.io.Serializable;
-import java.util.Objects;
 
 public class GameListDTO implements Serializable {
 
@@ -11,6 +13,10 @@ public class GameListDTO implements Serializable {
 
     private String name;
 
+    public GameListDTO(GameList entity) {
+        BeanUtils.copyProperties(entity, this);
+    }
+
     public String getName() {
         return name;
     }
@@ -18,18 +24,4 @@ public class GameListDTO implements Serializable {
     public void setName(String name) {
         this.name = name;
     }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        GameListDTO that = (GameListDTO) o;
-        return Objects.equals(name, that.name);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(name);
-    }
-
 }
