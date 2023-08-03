@@ -14,7 +14,7 @@ public interface GameRepository extends JpaRepository<Game, Long>{
 
 	//Consultas SQL's pura retornam a interface projection
     @Query(nativeQuery = true, value = """
-		SELECT tb_games.title, tb_games.game_year AS `gameYear`, tb_games.img_url AS imgUrl,
+		SELECT tb_games.title, tb_games.game_year AS gameYear, tb_games.img_url AS imgUrl,
 			     tb_games.short_description AS shortDescription, tb_belonging.position
 			                             		FROM tb_games
 			                             		INNER JOIN tb_belonging ON tb_games.id = tb_belonging.game_id
